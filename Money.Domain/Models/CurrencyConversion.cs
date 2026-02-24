@@ -29,7 +29,7 @@ namespace Money.Domain.Models
         public DateTime ConversionDate { get; set; } = DateTime.UtcNow;
 
         [Required]
-        [Range(1, 2147483647, ErrorMessage = "Amount must be greater than 0")]
+        [Range(1, 2147483647, ErrorMessage = "Amount must be equal greater than 1")]
         public int DepartmentId { get; set; }
     }
 }
