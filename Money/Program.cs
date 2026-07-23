@@ -60,6 +60,8 @@ builder.Services.AddSwaggerGen(c =>
 // Add Problem Details
 builder.Services.AddProblemDetails();
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline
