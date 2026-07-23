@@ -25,7 +25,7 @@ builder.Services.AddDbContext<CurrencyDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add AutoMapper
-builder.Services.AddAutoMapper(typeof(CurrencyMappingProfile));
+builder.Services.AddAutoMapper(cfg => { }, typeof(CurrencyMappingProfile));
 
 //Inject dependencies
 builder.Services.AddApplicationServices();
