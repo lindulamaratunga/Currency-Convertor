@@ -42,8 +42,8 @@ builder.Services.AddRefitClient<IOpenExchangeRatesApi>()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { 
-        Title = "Lindul Amaratunga - Money API", 
+    c.SwaggerDoc("v1", new() {
+        Title = "Lindul Amaratunga - Money API",
         Version = "v1",
         Description = "Currency conversion"
     });
