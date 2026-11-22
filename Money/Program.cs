@@ -31,12 +31,21 @@ builder.Services.AddAutoMapper(cfg => { }, typeof(CurrencyMappingProfile));
 builder.Services.AddApplicationServices();
 
 // Add Refit for Open Exchange Rates API
-builder.Services.AddRefitClient<IOpenExchangeRatesApi>()
+//builder.Services.AddKeyedRefitGeneratedClient<IOpenExchangeRatesApi>()
+//    .ConfigureHttpClient(c =>
+//    {
+//        var baseUrl = builder.Configuration["OpenExchangeRates:BaseUrl"];
+//        c.BaseAddress = new Uri(baseUrl ?? "https://openexchangerates.org/api");
+//    });
+
+
+builder.Services.AddRefitGeneratedClient<IOpenExchangeRatesApi>()
     .ConfigureHttpClient(c =>
     {
         var baseUrl = builder.Configuration["OpenExchangeRates:BaseUrl"];
         c.BaseAddress = new Uri(baseUrl ?? "https://openexchangerates.org/api");
     });
+
 
 // Add Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
